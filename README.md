@@ -6,3 +6,12 @@ Objective of the course:
 3.	 Design and develop web applications using spring boot 
 4.	Develop and deploy applications using JPA and Spring Boot.
 5.	 
+
+
+
+
+
+
+
+Software List :
+https://spring.io/tools/sts/all
