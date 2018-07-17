@@ -1,10 +1,16 @@
 
 CDP: Infogain Certified Spring Boot Developer
+
 Objective of the course:
+
 •	Define and demonstrate Spring boot 
+
 •	Developing and deploying application using spring boot 
+
 •	 Design and develop web applications using spring boot 
+
 •	Develop and deploy applications using JPA and Spring Boot.
+
 •	 Develop and deploy rest application 
 •	Define and Demonstrate Actuator
 •	Define and demonstrate HAL 
