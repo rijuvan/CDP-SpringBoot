@@ -10,6 +10,7 @@ Objective of the course:
 •	 Design and develop web applications using spring boot 
 
 •	Develop and deploy applications using JPA and Spring Boot.
+
 •	 Develop and deploy rest application 
 
 •	Define and Demonstrate Actuator
