@@ -1,0 +1,73 @@
+jdbc.driver=oracle.jdbc.driver.OracleDriver
+jdbc.url=jdbc:oracle:thin:@127.0.0.1:1521:XE
+jdbc.username=
+jdbc.password=
+
+# H2 Database configuration !!
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.h2.console.enabled=true 
+spring.h2.console.path=/h2
+
+# Configuration for Oracle!!
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@127.0.0.1:1521:XE
+spring.datasource.username=learning
+spring.datasource.password=learning
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+server.port=8090
+
+
+Spring data JPA 
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+
+		
+		
+		
+		URL to access :
+		
+Rest URL to access the data :
+		
+		/users
+		
+/users?page=1&size=1
+
+Sorting the result :
+
+/users?sort=username,desc
+
+Adding HAL browser
+
+
+<!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-rest-hal-browser -->
+<dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-rest-hal-browser</artifactId>
+    
+</dependency>
+
+
+Adding Actuator for Montiring !
+
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+
+
+We Can monitor application using Jconsole also .
+		
