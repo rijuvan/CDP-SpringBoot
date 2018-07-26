@@ -1,0 +1,103 @@
+Rabbit MQ Installation :
+
+Enabling admin console :
+rabbitmq-plugins enable rabbitmq_management
+
+RabbitmQ Admin Console :
+
+http://127.0.0.1:15672/
+
+// RabbitMQ dependencies 
+
+<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+</dependency>
+
+
+Configuration for RabbitMQ:
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=guest
+spring.rabbitmq.password=guest
+
+//***********  Code to create messages ***********
+
+@Component
+public class DemoSender {
+
+	@Autowired
+	RabbitMessagingTemplate template;
+
+	@Bean
+	Queue queue() {
+		return new Queue("TestQ", false);
+	}
+
+	public void send(String message) {
+		template.convertAndSend("registerQueue", message);
+	}
+}
+
+@Component
+public class DemoReciver {
+
+	@RabbitListener(queues = "TestQ")
+	public void processMessage(String content) {
+	System.out.println(content);
+	}
+	}
+
+	
+	
+	Main App Code :
+	
+@Autowired
+	DemoSender sender;
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemomessageApplication.class, args);
+		
+		
+	}
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		sender.send("Hello This is demo essage2 ");
+	}
+
+	
+	Documenting Spring Boot application :
+	
+	<dependency>
+<groupId>io.springfox</groupId>
+<artifactId>springfox-swagger2</artifactId>
+<version>2.3.1</version>
+</dependency>
+<dependency>
+<groupId>io.springfox</groupId>
+<artifactId>springfox-swagger-ui</artifactId>
+<version>2.3.1</version>
+</dependency>
+
+
+Enable Swgger on Spring boot App :
+
+@EnableSwagger2
+
+http://localhost:8080/swagger-ui.html
+
+
+
+Spring Security :
+
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-security</artifactId>
+   
+</dependency>
+
+
